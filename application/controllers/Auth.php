@@ -100,6 +100,10 @@ class Auth extends CI_Controller
                 'date_created' => time()
             ];
 
+            $this->db->insert('user', $data);
+            $this->session->set_flashdata('massage', '<div class="alert alert-success" role="alert">Congratulation! your account has been created. Please Login</div>');
+            redirect('auth');
+
             }
 
         }
